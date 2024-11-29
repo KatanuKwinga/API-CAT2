@@ -1,0 +1,16 @@
+import requests
+
+BASE_URL = "http://127.0.0.1:8000/api/products/"
+
+#Add a product
+new_product = {
+    "name": "Speaker",
+    "description": "A small, protable speaker",
+    "price": 5000.00,
+}
+response = requests.post(BASE_URL, json=new_product)
+print(response.json())
+
+#Get all products
+response = requests.get(BASE_URL)
+print(response.json())
